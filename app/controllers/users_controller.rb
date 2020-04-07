@@ -8,6 +8,9 @@ class UsersController < ApplicationController
         if user.valid?
             user = user
             token = JWT.encode({user_id: user.id}, ENV[JWT_SECRET_KEY], 'HS256')
+            render json: {user: user, token: token}
+        else
+            render json: {errors: user.errors.full_messages}
     end
 
     def show
@@ -16,11 +19,14 @@ class UsersController < ApplicationController
     end
 
     def update
-
+        user = User.find_by(params[:id])
+        user.update(user_params)
+        render json: user
     end
 
     def destroy
-
+        user = User.find_by(params[:id])
+        user.destroy
     end
 
     private
