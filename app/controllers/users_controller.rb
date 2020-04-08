@@ -11,6 +11,7 @@ class UsersController < ApplicationController
             render json: {user: user, token: token}
         else
             render json: {errors: user.errors.full_messages}
+        end
     end
 
     def show
