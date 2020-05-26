@@ -166,8 +166,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionpack (>= 6.0.3.1)
   active_model_serializers
   activerecord-reset-pk-sequence
+  activestorage (>= 6.0.3.1)
+  activesupport (>= 6.0.3.1)
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
   byebug

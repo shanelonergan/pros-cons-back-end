@@ -45,3 +45,11 @@ gem 'active_model_serializers'
 gem 'jwt'
 gem 'activerecord-reset-pk-sequence'
 gem 'dotenv-rails', groups: [:development, :test]
+
+# security updates
+# gem "activesupport", ">= 6.0.3.1"
+# gem "actionpack", ">= 6.0.3.1"
+# gem "activestorage", ">= 6.0.3.1"
+
+
+

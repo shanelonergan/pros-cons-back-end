@@ -1,11 +1,14 @@
 class ListsController < ApplicationController
     def show
         list = List.find(params[:id])
-        render json: listing
+        render json: list
     end
 
     def create
+
         list = List.create(list_params)
+
+        # byebug
 
         if list.valid?
             render json: list
@@ -21,6 +24,6 @@ class ListsController < ApplicationController
     private
 
     def list_params
-        params.permit(:list, :listName)
+        params.permit(:list, :name, :user_id)
     end
 end
